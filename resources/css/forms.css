@@ -1,0 +1,76 @@
+button, .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 0;
+    padding: 0.3rem 1.3rem;
+    min-height: 40px;
+    min-width: 40px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 0.85rem;
+
+    &:hover {
+        box-shadow: 0 1px 3px 0 hsla(var(--gray-400),1);
+    }
+
+    &:active {
+        box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+        & svg {
+            opacity: 0.79;
+        }
+    }
+
+    & span {
+        font-weight: 500;
+    }
+
+    & svg {
+        width: 1.5rem;
+    }
+
+    &.green {
+        background: hsla(var(--green-800), 0.85);
+
+        & span {
+            color: var(--white)
+        }
+
+        & svg.stroke {
+            stroke: hsla(var(--green-50), 0.90);
+        }
+
+        & svg.fill {
+            fill: hsla(var(--green-50), 0.90);
+        }
+    }
+
+    &.blue {
+        background: hsla(var(--blue-700), 0.8);
+
+        & span {
+            color: var(--white)
+        }
+
+        & svg {
+            stroke: hsla(var(--blue-50), 0.90);
+        }
+    }
+
+    &.white {
+        background: var(--white);
+        border:1px solid hsla(var(--gray-200), 1);
+
+        & span {
+            color: hsla(var(--gray-600), 1)
+        }
+
+        & svg.fill {
+            fill: hsla(var(--gray-700), 0.90);
+        }
+        & svg.stroke {
+            stroke: hsla(var(--gray-700), 0.90);
+        }
+    }
+}
