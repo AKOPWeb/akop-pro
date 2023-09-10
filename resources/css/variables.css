@@ -1,6 +1,7 @@
 * {
     --sidebar-width: 290px;
     --nav-height: 60px;
+    --icon-opacity-on-active-state: 0.79;
 
     /*
         Colors

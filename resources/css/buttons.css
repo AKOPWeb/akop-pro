@@ -1,3 +1,4 @@
+/* Standard Button */
 button, .button {
     display: flex;
     align-items: center;
@@ -18,7 +19,7 @@ button, .button {
     &:active {
         box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
         & svg {
-            opacity: 0.79;
+            opacity: var(--icon-opacity-on-active-state);
         }
     }
 
@@ -31,7 +32,7 @@ button, .button {
     }
 
     &.green {
-        background: hsla(var(--green-800), 0.85);
+        background: hsla(var(--green-700), 0.9);
 
         & span {
             color: var(--white)
@@ -72,5 +73,39 @@ button, .button {
         & svg.stroke {
             stroke: hsla(var(--gray-700), 0.90);
         }
+    }
+}
+
+/* Flat Button with Icon (no text) */
+.flat-button-with-icon {
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: hsla(var(--gray-100));
+    }
+
+    &:active {
+        border-color: hsla(var(--gray-700),0.1);
+        & svg {
+            opacity: var(--icon-opacity-on-active-state);
+        };
+    }
+
+    & svg {
+        min-width:1.5rem;
+    }
+
+    & svg.fill {
+        fill: hsla(var(--gray-700), 0.90)));
+    }
+
+    & svg.stroke {
+        fill: hsla(var(--gray-700), 0.90)));
     }
 }

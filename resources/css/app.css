@@ -5,12 +5,10 @@ https://miro.medium.com/v2/resize:fit:720/format:webp/0*fn1C53D1mxnkWtr-.png
 https://miro.medium.com/v2/resize:fit:1100/format:webp/0*lVv2quAwUORarSm_.png
 */
 @import url('variables.css');
-@import url('forms.css');
-
-@font-face {
-    font-family: 'Inter var';
-    src: url("../fonts/Inter-VariableFont_slnt,wght.woff2");
- }
+/* @import url('inputs.css'); */
+@import url('buttons.css');
+@import url('tiles-containers.css');
+@import url('helpers.css');
 
  @font-face {
     font-family: 'Geologica';
@@ -21,7 +19,7 @@ https://miro.medium.com/v2/resize:fit:1100/format:webp/0*lVv2quAwUORarSm_.png
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter var', ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     font-weight: 300;
     letter-spacing: 0.01rem;
     color: hsl(var(--gray-800));
@@ -44,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
         background-color: hsla(var(--gray-950), 0.83);
         width: var(--sidebar-width);
         transition: margin .5s ease-in-out;
-        &.visible {
+        &.slide-and-hide {
             margin-left: calc(var(--sidebar-width) * -1);
         }
     }
@@ -74,12 +72,4 @@ h1, h2, h3, h4, h5, h6 {
         background-color: hsla(var(--gray-100), 0.80);
         padding: calc(var(--nav-height) + 1rem) 1rem;
     }
-}
-
-.tile {
-    border-radius: 0.5rem;
-    width:70%;
-    padding: 1rem 1.1rem;
-    background-color: var(--white);
-    box-shadow:0px 1px 4px 0 hsla(var(--gray-950), 0.2);
 }
