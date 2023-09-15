@@ -1,0 +1,38 @@
+input {
+    border:none;
+    padding: 1rem .9rem;
+    border-radius: 5px;
+    font-size: .95rem;
+
+    &:focus{
+        outline: .1em solid hsla(var(--green-600),.5);
+    }
+}
+
+.input-with-button-inside {
+    border-radius: 5px;
+    display: flex;
+    background:hsl(var(--white));
+    padding: .5rem;
+    outline: 1px solid hsla(var(--gray-600),.1);
+
+    @media (width > 425px){
+        width: 40hw;
+    }
+
+    &:focus-within{
+        outline: 1px solid hsla(var(--green-600),.5);
+    }
+
+    & input {
+        width: 100%;
+        &:focus{
+            outline:none;
+        }
+        /* box-shadow: inset 1px 1px 4px 0px hsla(var(--gray-400),.3); */
+    }
+    & .button {
+        flex-shrink: 0 0 auto;
+        border-radius: 5px;
+    }
+}

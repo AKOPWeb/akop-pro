@@ -8,7 +8,7 @@
         Gray => from Tailwind Slate
     */
 
-    --white: #fefefe;
+    --white: 0, 0%, 100%;
 
     --gray-50: 210, 40%, 98%;
     --gray-100: 210, 40%, 96%;
