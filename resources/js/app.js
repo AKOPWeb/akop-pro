@@ -15,3 +15,11 @@ window.classToggle = (elementIds, classes) => {
     });
 }
 
+window.buttonLoadingState = (elementId,classToAdd) => {
+    let button = document.getElementById(elementId)
+    if (button === null) return false
+    button.querySelector('span').innerText = 'Carregando'
+    button.disabled = true
+    button.classList.add(classToAdd)
+};
+

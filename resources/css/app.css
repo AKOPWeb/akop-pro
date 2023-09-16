@@ -16,17 +16,17 @@ https://miro.medium.com/v2/resize:fit:1100/format:webp/0*lVv2quAwUORarSm_.png
     src: url("../fonts/Geologica-VariableFont_CRSV,SHRP,slnt,wght.woff2");
 }
 
+@font-face {
+    font-family: 'Lora';
+    src: url("../fonts/Lora-VariableFont_wght.woff2");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    font-weight: 300;
-    color: hsl(var(--gray-800));
-}
-
-p {
-    font-size: .95rem;
+    color: hsl(var(--gray-700));
 }
 
 h1,
@@ -36,7 +36,6 @@ h4,
 h5,
 h6 {
     color: hsla(var(--gray-900));
-    letter-spacing: -1px;
     font-family: 'Geologica', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
@@ -88,18 +87,47 @@ h6 {
     gap: 0;
     height: 100vh;
 
-    @media (width > 425px){
+    @media (width > 480px){
         grid-template-columns: repeat(2,1fr);
     }
 
     & .left {
         background-color: aliceblue;
         display: flex;
-        align-items: center;
+        align-items: start;
+        justify-content: center;
     }
 
     & .right {
-        background-size: cover;
+        /* background-color: hsla(var(--gray-900)); */
+        background-image: linear-gradient(to bottom, #10031e 0, #374177 100%);
+        position: relative;
+        & p {
+            position: absolute;
+            & span {
+                font-family: Lora;
+                background-image: linear-gradient(179deg,rgb(254, 97, 158) 0%, rgb(254, 97, 158) 50%,transparent 54%, transparent 10%);
+                background-size:  100% 13%;
+                padding-bottom: 5px;
+                background-repeat: repeat-x;
+                background-position: left 0% bottom 10%;
+            }
+            font-family: Lora;
+            padding: 2rem 4rem 2rem;
+            font-size: 1.5rem;
+            background: linear-gradient(to bottom, #eee, #f4f4f4, hsla(var(--sky-200),.7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        & img {
+            position: absolute;
+            width: 90%;
+            bottom:0;
+            opacity: .07;
+            animation: float 20s infinite;
+        }
     }
 
     & .main-info-container {
@@ -107,15 +135,17 @@ h6 {
         flex-direction: column;
         gap: 1rem;
         padding: 2rem;
+        flex: auto;
+        max-width: calc(var(--mobile-width) + 400px);
 
         & p {
             line-height: 1.6rem;
             font-size: 1.1rem;
-            letter-spacing: .03rem;
             & strong {
                 font-weight: 600;
             }
         }
+
         & h1 {
             display: flex;
             align-items: center;
@@ -129,42 +159,91 @@ h6 {
             color: hsl(var(--gray-700));
 
             & img {
-                width: 3rem;
+                width: 4rem;
             }
-
-            @media (width > 425px){
-                line-height: 5.5rem;
-                flex-direction: row;
-            }
-
         }
     }
+}
 
-    .info-box {
-        background-color: hsla(var(--white),.9);
-        backdrop-filter: blur(1px);
-        margin:5rem;
-        border-radius: 10px;
-        position: relative;
+.error-list {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    margin-top: .5rem;
+     & span {
+        color: rgb(143, 55, 55);
+        font-size: 1rem;
+     }
+}
 
-        & img {
-            position:absolute;
-            top:-1.2rem;
-            left: -1rem;
-            min-width: 70px;
-            max-width: 100px;
-        }
+.success-message {
+    text-align: center;
+    padding: 1rem;
+    & strong {
+        font-size: 1.5rem;
+        font-family: Lora;
+        margin-bottom:.4rem;
+        color: hsla(var(--green-700),.9);
+        display: block;
+        font-weight: 600;
+    }
+    animation: appear-from-top 1s 1;
+}
 
-        & p {
-            width: 100%;
-            line-height: 1.4rem;
-            font-size: 1.1rem;
-            padding: 1.5rem 2rem 2rem 6rem;
-            & strong {
-                font-weight: 600;
-                display: block;
-                margin-bottom:.5rem
-            }
-        }
+.success-animation {
+    margin:1rem 0 0 0;
+}
+.checkmark {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #4bb71b;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #4bb71b;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    position:relative;
+    top: 5px;
+    right: 5px;
+   margin: 0 auto;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4bb71b;
+    fill: #fff;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #4bb71b;
     }
 }

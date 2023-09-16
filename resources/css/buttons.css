@@ -94,6 +94,30 @@ button, .button {
             stroke: hsla(var(--gray-700), 0.90);
         }
     }
+
+    &.disabled {
+        background: hsl(var(--gray-200));
+        border:1px solid hsla(var(--gray-200), 1);
+        cursor: not-allowed;
+
+        &:hover{
+            background: hsl(var(--gray-200));
+        }
+
+        & span {
+            color: hsla(var(--gray-300), 1)
+        }
+
+        & svg.fill {
+            fill: hsla(var(--gray-300), 0.90);
+        }
+
+        & svg.stroke {
+            stroke: hsla(var(--gray-300), 0.90);
+        }
+
+
+    }
 }
 
 /* Flat Button with Icon (no text) */
