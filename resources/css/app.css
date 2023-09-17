@@ -103,7 +103,7 @@ h6 {
             bottom:0;
             opacity: .07;
             animation: float 15s infinite;
-            @media (width <= 480px){
+            @media screen (width <= 480px){
                 display: none;
             }
         }
@@ -122,15 +122,16 @@ h6 {
                 background-position: left 0% bottom 10%;
             }
             font-family: Lora;
-            padding: 2rem 4rem 2rem;
+
             font-size: 1.5rem;
             background: linear-gradient(to bottom, #eee, #f4f4f4, hsla(var(--sky-200),.7));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            @media (width <= 480px){
-                padding: 2rem;
+            padding: 2rem;
+            @media (min-width: 480px) {
+                padding: 2rem 4rem 2rem;
             }
         }
     }
