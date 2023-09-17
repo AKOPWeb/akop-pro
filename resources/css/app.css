@@ -103,7 +103,7 @@ h6 {
             bottom:0;
             opacity: .07;
             animation: float 15s infinite;
-            @media (max-width: 480px) {
+            @media (width <= 480px) {
                 display: none;
             }
         }
