@@ -12,7 +12,7 @@ php artisan route:cache
 php artisan queue:restart
 chown -R www-data:www-data /var/www/akop.pro
 npm install
-npm run prod
+npm run build
 @endtask
 
 @task('migrate-fresh-seed', ['on' => 'remote'])
