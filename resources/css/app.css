@@ -96,14 +96,20 @@ h6 {
         display: flex;
         align-items: start;
         justify-content: center;
+
+        & .board-img {
+            position: absolute;
+            width: 20%;
+            bottom:0;
+            opacity: .07;
+            animation: float 15s infinite;
+        }
     }
 
     & .right {
         /* background-color: hsla(var(--gray-900)); */
         background-image: linear-gradient(to bottom, #10031e 0, #374177 100%);
-        position: relative;
         & p {
-            position: absolute;
             & span {
                 font-family: Lora;
                 background-image: linear-gradient(179deg,rgb(254, 97, 158) 0%, rgb(254, 97, 158) 50%,transparent 54%, transparent 10%);
@@ -120,13 +126,6 @@ h6 {
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-        }
-        & img {
-            position: absolute;
-            width: 90%;
-            bottom:0;
-            opacity: .07;
-            animation: float 20s infinite;
         }
     }
 

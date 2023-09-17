@@ -53,9 +53,9 @@
                     @endif
                 </form>
             </div>
+            <img src="{{ Vite::asset('resources/img/board.png') }}" class="board-img" alt="">
         </div>
         <div class="right">
-            <img src="{{ Vite::asset('resources/img/board.png') }}" alt="Quadro Kanban">
             <p>
                 💭 Já imaginou um software que ajude sua equipe a organizar <span class="underline">tarefas</span>,
                 <span>prazos</span>, <span>documentos</span>, <span>clientes</span> e outras atividades num único lugar?
