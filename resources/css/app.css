@@ -103,6 +103,9 @@ h6 {
             bottom:0;
             opacity: .07;
             animation: float 15s infinite;
+            @media (width <= 480px){
+                display: none;
+            }
         }
     }
 
@@ -126,6 +129,9 @@ h6 {
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
+            @media (width <= 480px){
+                padding: 2rem;
+            }
         }
     }
 
